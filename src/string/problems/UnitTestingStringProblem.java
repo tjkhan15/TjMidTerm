@@ -10,5 +10,10 @@ public class UnitTestingStringProblem {
         ana.checkAnagram("CAT","ACT");
         ana.checkAnagram("MARY","ARMY");
 
+        System.out.println();
+        System.out.println("This is UnitTestingStringProblem for DuplicateWord");
+        DuplicateWord dupWord = new DuplicateWord();
+        dupWord.duplicateWord("Java is a programming Language. Java is also an Island of Indonesia. Java is widely used language");
+
     }
 }
