@@ -1,0 +1,5 @@
+
+Total Execution Time of 1000000 numbers in Insertion Sort take: 81982 milli sec
+Total Execution Time of 1000000 numbers in Bubble Sort take: 1419869 milli sec
+Total Execution Time of 1000000 numbers in Merge Sort take: 230 milli sec
+Total Execution Time of 1000000 numbers in Quick Sort take: 157 milli sec

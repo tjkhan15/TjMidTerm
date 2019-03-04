@@ -19,7 +19,7 @@ public class PrimeNumber {
 		 *
 		 */
 
-		int i =0;
+		int i = 0;
 		int num =0;
 		//Empty String
 		String  primeNumbers = "";

@@ -34,7 +34,7 @@ public class LowestNumber {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.print("Data is reading from the Table (tbl_primenumber) and displaying to the console: ");
+		System.out.print("Data is reading from the Table (tbl_primeNumber) and displaying to the console: ");
 		for(String st:lowestValue){
 			System.out.print(st+", ");
 		}

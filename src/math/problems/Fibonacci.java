@@ -15,8 +15,8 @@ public class Fibonacci {
                 fibo[i] = i;
             }else {
                 fibo[i]=fibo[i-2] + fibo[i-1];
-            }// end of if else
-        }// end of for loop
+            }
+        }
         System.out.println(Arrays.toString(fibo));
-    }// end of main
+    }
 }
