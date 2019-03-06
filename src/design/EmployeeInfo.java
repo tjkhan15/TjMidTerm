@@ -2,79 +2,198 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo {
-	
- /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
- * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
- * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
- * go to FortuneEmployee class to apply all the fields and attributes.
- * 
- * Important: YOU MUST USE the 
- * OOP(abstraction,Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
- * Use all kind of keywords(super,this,static,final........)
- * Implement Nested class.
- * Use Exception Handling.
- *
- */
+public class EmployeeInfo extends Departments implements Employee {
+
+	/*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
+	 * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
+	 * then inherit that abstract class into EmployeeInfo class.Once you done with designing EmployeeInfo class,
+	 * go to FortuneEmployee class to apply all the fields and attributes.
+	 *
+	 * Important: YOU MUST USE the
+	 * OOP(abstraction,Encapsulation, Inheritance and Polymorphism) concepts in every level possible.
+	 * Use all kind of keywords(super,this,static,final........)
+	 * Implement Nested class.
+	 * Use Exception Handling.
+	 *
+	 */
 
 	/*
 	 * declare few static and final fields and some non-static fields
 	 */
-	static String companyName;
-	
+	private static String companyName;
+	static double monthly;
+	private String employeeName;
+	private int employeeID, employeeAge;
+	public int numberOfYears;
+
 	/*
-	 * You must implement the logic for below 2 methods and 
+	 * You must implement the logic for below 2 methods and
 	 * following 2 methods are prototype as well for other methods need to be design,
 	 * as you will come up with the new ideas.
 	 */
-	
+
+	//Getter setter method for encapsulation
+	public static String getCompanyName() {
+		return companyName;
+	}
+	public static void setCompanyName(String companyName) {
+		EmployeeInfo.companyName = companyName;
+	}
+
+	public int getEmployeeID() {
+		return employeeID;
+	}
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
+	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
 	/*
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo(int employeeId){
-		
+	//Default constructor
+	public EmployeeInfo(){
 	}
-    public EmployeeInfo(String name, int employeeId){
-		
+
+	public EmployeeInfo(int employeeID){
+		this.employeeID = employeeID;
+		System.out.println("\nEmp ID: " + employeeID);
 	}
-	
-	/*
-	 * This methods should calculate Employee bonus based on salary and performance.
-	 * Then it will return the total yearly bonus. So you need to implement the logic.
-	 * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on. 
-	 * You can set arbitrary number for performance.
-	 * So you probably need to send 2 arguments.
-	 * 
-	 */
-	public static int calculateEmployeeBonus(int numberOfYearsWithCompany){
-		int total=0;
-		return total;
+
+	public EmployeeInfo(String employeeName, int employeeID){
+		this.employeeName = employeeName;
+		this.employeeID = employeeID;
+		System.out.println("Emp Name: " +employeeName+ "\nEmp ID: " +employeeID+"\n");
 	}
-	
+
+	public EmployeeInfo(String employeeName, int employeeID, int employeeAge) {
+		this.employeeName = employeeName;
+		this.employeeID = employeeID;
+		this.employeeAge = employeeAge;
+		System.out.println("Emp Name: " +employeeName+ "\nEmp ID: " +employeeID+ "\nEmp Age: " +employeeAge+"\n");
+	}
+
+	public void assignDepartment() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Please enter your department name: ");
+		String department = s.nextLine();
+		if (employeeName==null){
+			System.out.println("Please enter your name here: ");
+			String nName = s.nextLine();
+			System.out.println(nName + " has been assign to " + department);
+			this.employeeName = nName;
+		} else{
+			System.out.println(employeeName + " has been assign to " + department);}
+
+	}
+
+	public double calculateSalary() {
+		Scanner s = new Scanner(System.in);
+		System.out.println();
+		System.out.println("Please insert your monthly salary here: ");
+		double monthly = s.nextInt();
+		this.monthly = monthly;
+		System.out.println(employeeName+ "'s Monthly salary is: \t"+monthly);
+		System.out.println(employeeName+ "'s Annual salary is: \t"+monthly*12);
+		return monthly;
+	}
+
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
 	 * Then it will return the total pension. So you need to implement the logic.
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
-	 * 
+	 *
 	 */
-	public static int calculateEmployeePension(){
-		int total=0;
+	public int numberOfYearsWithCompany(){
+		int total = 0;
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
 		String joiningDate = sc.nextLine();
 		System.out.println("Please enter today's date in format (example: August,2017): ");
 		String todaysDate = sc.nextLine();
-        String convertedJoiningDate = DateConversion.convertDate(joiningDate);
-        String convertedTodaysDate = DateConversion.convertDate(todaysDate);
+		String convertedJoiningDate = DateConversion.convertDate(joiningDate);
+		String convertedTodaysDate = DateConversion.convertDate(todaysDate);
 
-        //implement numbers of year from above two dates
-		//Calculate pension
+		String startYear = convertedJoiningDate.substring(convertedJoiningDate.length()-4);
+		String currentYear = convertedTodaysDate.substring(convertedTodaysDate.length()-4);
 
-
+		//implement numbers of year from above two dates
+		int start = Integer.parseInt(startYear);
+		int current = Integer.parseInt(currentYear);
+		numberOfYears = current-start;
 
 		return total;
 	}
+
+	public double calculateEmployeePension() {
+		int total = 0;
+		System.out.println(employeeName+ " working " +numberOfYears+ " years with us!\n");
+
+		//Calculate pension
+		if (numberOfYears >= 5) {
+			total = (int) (monthly* .25);
+		} else if (numberOfYears == 4) {
+			total = (int) (monthly * .20);
+		} else if (numberOfYears == 3) {
+			total = (int) (monthly * .15);
+		} else if (numberOfYears == 2) {
+			total = (int) (monthly * .10);
+		} else if (numberOfYears == 1) {
+			total = (int) (monthly * .05);
+		} else if (numberOfYears == 0) {
+			total = 0;
+		}
+		System.out.println("Your Monthly pension according to staying with us: $" + total +"\n");
+
+		return total;
+	}
+
+	/*
+	 * This methods should calculate Employee bonus based on salary and performance.
+	 * Then it will return the total yearly bonus. So you need to implement the logic.
+	 * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on.
+	 * You can set arbitrary number for performance.
+	 * So you probably need to send 2 arguments.
+	 *
+	 */
+	public double calculateEmployeeBonus(){
+		double bonus = monthly;
+		if (numberOfYears>=3 ){bonus = (int)monthly * 0.10;
+			System.out.println("\nYour new salary with 10% raise is: " + bonus);return (int) bonus;
+		} else if (numberOfYears>=2 ){ bonus = (int)monthly * 0.08;
+			System.out.println("\nYour increment for average performance with 8% rise is: " + bonus);
+			System.out.println();
+		}
+		return bonus;
+	}
+
+	@Override
+	public void departments() {
+		System.out.println("\nDepartments of this organization are: \n" +dep1+"\n"+dep2+"\n"+dep3+"\n"+dep4+"\n"+dep5+"\n"+dep6);
+	}
+
+	@Override
+	public int employeeId() {
+		return 0;
+	}
+
+	@Override
+	public String employeeName() {
+		return null;
+	}
+
+	@Override
+	public void benefitLayout() {
+
+	}
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}
@@ -132,6 +251,11 @@ public class EmployeeInfo {
 			}
 			return date;
 
+		}
+	}
+	public class nestedclass {
+		public void nestedMethod() {
+			System.out.print("Name ");
 		}
 	}
 }

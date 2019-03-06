@@ -78,7 +78,7 @@ public class ProcessStudentInfo {
 						String firstname = s.getFirstName();
 						String lastname = s.getLastName();
 						String grade = s.getScore();
-						System.out.println("| Students (id=" + id + ")\t" + firstname + "'\t'" + lastname + "\t'grade= " + grade);
+						System.out.println("| Students (id=" + id + ") " + "  Grade= " + grade + "\t'" +firstname + "' '" + lastname);
 					}
 					System.out.println("+--------------------------------------------------+");
 				}
@@ -103,10 +103,10 @@ public class ProcessStudentInfo {
 				//Retrieve Selenium students from Database
 				List<Student> stList2 = connectToMongoDB.readStudentListFromMongoDB("selenium");
 				System.out.println("+----------------------------------------------+");
-				System.out.println("|  Retrieve Selenium students from Database");
+				System.out.println("|  Retrieve"+""+ "Selenium students from Database");
 				System.out.println("+----------------------------------------------+");
 				for (Student st : stList2) {
-					System.out.println("| " +st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
+					System.out.println("| " +st.getFirstName() + " " + st.getLastName() + "\t" + st.getScore() + "\t" + st.getId());
 				}
 				System.out.println("+----------------------------------------------+");
 

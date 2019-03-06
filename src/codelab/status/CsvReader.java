@@ -67,6 +67,6 @@ public class CsvReader {
         for (Trainee tr : roster) {
             total += tr.getNumberOfExercisesSolved();
         }
-        System.out.println("The average score of the class: " + total/size);
+        System.out.println("\nThe average score of the class:\t" + total/size);
     }
 }

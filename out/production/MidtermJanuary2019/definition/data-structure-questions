@@ -1,34 +1,99 @@
 Please answer the below Data Structure Questions:
 
 why do we need data structure?
-A.
-
+A. we need data structures to hold objects and variable in one accessible place
 
 What are the various operations that can be performed on different Data Structures?
+A. search, insert, delete, access
+
 List out the areas in which data structures are applied extensively?
+A. data structures are extensively used to store records in the form of objects
+
 what is an Array?
+A. an array is a datastructure provided by java to store a fixed collection of elements of the same type.
+
 what is the difference between the Array and ArrayList?
+A. arrays are fixed in size and must be declared at the time of initialization, ArrayLists are dynamic and can grow or shrink accordingly
+as the number of elements grow
+
 what is LinkedList?
+A. alinked list is a datastructure where records are stored in nodes and are linked by reference pointers from one node to another
+node in memory
+
 How is an Array different from Linked List?
+A. arrays are fixed,linked lists are dynamic, arrays have consatnt access time, while linked lists do not
+however, insertion and deletion are constant in linked lists, while not in arrays
+
 what is queue?
+A. queues are abstract datastructures that implement the fifo methodology
+
 what is stack?
+A. stacks are also a abstract dataStructure but implement the lifo methodology
+
 what is FIFO and LIFO?
+A. lifo stands for lastin first out and is used by queues, while Lifo stands for last in first out and is implemented by stacks
+
 what is the order of complexity?
-what is the best case to search an element from an array?
+A. Order of complexity is a relative measure of how much cpu time a certain algorithm will take
+
+wwhat is the best case to search an element from an array?
+A.  O(1)
+
 what is the worst case to search an element from an array?
+A. O(n)
+
 what is tree in data structure?
+A. a tree is any datastructure in which threre are nodes that are connected by edges
+
 what is graph in data structure?
+A. A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
+
 what is the difference between the HashTable and HashMap?
+A. hashmap is not threadsafe where as Hashtable is. also hashTable does not allow null key/values but hashmaps do
+
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+A. · RDBMS – Array (i.e. Array of structures)
+
+   · Network data model – Graph
+
+   · Hierarchical data model – Trees
+
+
 How HashMap works in java?
+A. hashMaps work by storing key value pairs which can then be used to compare results
+
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+A. this is an Exception that occurs when we try to access a index in an array that does not exist
+
 What are the different ways of copying an array into another array?
+A.
+
 What is difference between an array and a linked list?
+A. arrays are fixed,linked lists are dynamic, arrays have consatnt access time, while linked lists do not
+ however, insertion and deletion are constant in linked lists, while not in arrays
+
 What is DFS and BFS?
+A. depth first search is when when we try to visit the furthest nodes in a graph first, while breadth first search is when
+we visited the nodes level by level in order to stay as close to the root as possible
+
 What is Recursion?
+A. recursion is the process in which a method repeatedly calls itself with smaller data set then the last until a base case is reached
+
 What are linear and non linear data Structures?
+A. linear data structures grow directly proportional to the number of elements, non linear DS grow either faster or slower than
+linear ones
+
 What is Big-(O)-notation?
+A. it’s useful to have a shorthand way to say how efficient a computer algorithm is. In computer science, this rough measure is called “Big O” notation.
+it is a comparison that tells how an algorithm’s speed is related to the number of items.
+
 Outlined different kind of sorting algorithm with time complexity?
+A. bubblesort = n^2
+   InsertionSort = n^2
+   SelectionSort = 2^2
+   QuickSort = nlogn
+   mergesort = nlogn
+   bucketSort= n+k
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
@@ -36,4 +101,9 @@ Draw a table with time complexity in which it will summarize all the data struct
   c)In terms of Searching element.
   d)In terms of Removing element.
 
-
+A. array: search o(n), access o(1), insert o(n), deletion o(n)
+   arraylist: search o(n), access o(1), insert o(n), deletion o(n)
+   linkedlist: search o(n), access o(1), insert o(1), deletion o(1)
+   stack: search o(n), access o(n), insert o(1), deletion o(1)
+   queue: search o(n), access o(n), insert o(1), deletion o(1)
+   B-Tree: search o(log n), access o(log n), insert o(log n), deletion o(log n)
